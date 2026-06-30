@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="大学サッカー連盟向けオンライン承認システム 10画面フル版静的デモ" />
+  <title>大学サッカー連盟 オンライン承認システム 10画面フル版デモ</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark">承</div>
+        <div>
+          <small>GitHub Pages 公開用 / 10画面フル版</small>
+          <strong>大学サッカー連盟 オンライン承認システム</strong>
+        </div>
+      </div>
+      <div class="header-note">スマホ優先・静的HTMLデモ・関係者説明向け</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>10画面を順番に確認できる、GitHub Pages公開用のフル版デモです。</h1>
+          <p>
+            紙の押印フローをオンライン化するイメージを、トップページから申請、確認、承認、管理、履歴、エラー、メール通知まで一通り確認できます。
+            スマホ表示を優先しつつ、PCでも提案資料として見やすい構成にしています。
+          </p>
+          <div class="hero-badges">
+            <span class="badge">スマホファースト</span>
+            <span class="badge">Googleアカウント不要</span>
+            <span class="badge">専用URL + 6桁コード</span>
+            <span class="badge">承認履歴保存</span>
+            <span class="badge">事務局通知</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title">収録画面</div>
+          <strong>トップ / 申請 / 承認 / 管理 ほか全10画面</strong>
+          <div class="hero-list">
+            <div>・申請導線と入力UI</div>
+            <div>・承認ルートと本人確認</div>
+            <div>・完了 / 差戻し / 却下の見せ方</div>
+            <div>・一覧管理 / 履歴 / エラー / メール通知</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2>10画面フル版デモ</h2>
+          <p>上のタブで画面を切り替えると、左でスマホ表示、右でPC表示を確認できます。</p>
+        </div>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-screen="top">1. トップ</button>
+        <button class="tab-btn" data-screen="form">2. 申請フォーム</button>
+        <button class="tab-btn" data-screen="confirm">3. 内容確認</button>
+        <button class="tab-btn" data-screen="approval">4. 承認画面</button>
+        <button class="tab-btn" data-screen="complete">5. 承認完了</button>
+        <button class="tab-btn" data-screen="return">6. 差戻し・却下</button>
+        <button class="tab-btn" data-screen="list">7. 申請一覧</button>
+        <button class="tab-btn" data-screen="detail">8. 詳細・履歴</button>
+        <button class="tab-btn" data-screen="error">9. エラー</button>
+        <button class="tab-btn" data-screen="mail">10. メール通知</button>
+      </div>
+
+      <div class="demo-grid">
+        <section class="panel phone-shell">
+          <div class="phone">
+            <div class="phone-status"></div>
+
+            <div class="screen active" data-screen="top">
+              <div class="screen-head">
+                <small>大学サッカー連盟</small>
+                <h3>オンライン承認システム</h3>
+              </div>
+              <div class="screen-body">
+                <div class="card subtext">出張申請・経費申請・備品購入申請などをオンラインで申請・承認できるシステムです。</div>
+                <div class="menu-cards">
+                  <div class="menu-card"><strong>新規申請</strong><span>出張・経費・備品購入</span></div>
+                  <div class="menu-card"><strong>申請状況確認</strong><span>申請IDで進捗確認</span></div>
+                  <div class="menu-card"><strong>管理者ログイン</strong><span>事務局・管理者向け</span></div>
+                  <div class="menu-card"><strong>操作ガイド</strong><span>はじめての方へ</span></div>
+                </div>
+                <div class="card">
+                  <div class="card-title">システムの特長</div>
+                  <div class="subtext">Googleアカウント不要。承認者ごとの専用URLと6桁認証コードで本人確認し、承認履歴を保存します。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="form">
+              <div class="screen-head">
+                <small>新規申請</small>
+                <h3>出張費申請フォーム</h3>
+              </div>
+              <div class="screen-body">
+                <div class="field-group">
+                  <div class="field"><label>申請者名</label><div class="value">山田 太郎</div></div>
+                  <div class="field"><label>メールアドレス</label><div class="value">t.yamada@example.jp</div></div>
+                  <div class="field"><label>所属・役職</label><div class="value">競技運営部 / 理事</div></div>
+                  <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
+                  <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+                  <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+                  <div class="cols-2">
+                    <div class="field"><label>利用日</label><div class="value">2026/07/08</div></div>
+                    <div class="field"><label>出張先</label><div class="value">東京都千代田区</div></div>
+                  </div>
+                  <div class="field"><label>目的</label><div class="value">理事会出席 / 競技運営打合せ</div></div>
+                  <div class="summary-box">
+                    <div class="card-title">金額内訳</div>
+                    <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+                    <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+                    <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+                    <div class="sum-row total"><span>合計金額</span><strong>28,300円</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="confirm">
+              <div class="screen-head">
+                <small>申請前確認</small>
+                <h3>入力内容の確認</h3>
+              </div>
+              <div class="screen-body">
+                <div class="field"><label>申請ID</label><div class="value"><strong>2026-0001</strong></div></div>
+                <div class="field"><label>申請者 / 申請種別</label><div class="value">山田 太郎 / 出張申請</div></div>
+                <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+                <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
+                <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+                <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+                <div class="field"><label>承認ルート</label>
+                  <div class="route">
+                    <span class="step current">担当理事</span>
+                    <span>→</span>
+                    <span class="step">顧問</span>
+                    <span>→</span>
+                    <span class="step">会長</span>
+                  </div>
+                </div>
+                <div class="btn-single"><button class="btn navy" type="button">この内容で申請する</button></div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="approval">
+              <div class="screen-head">
+                <small>承認依頼</small>
+                <h3>申請 2026-0001 を確認</h3>
+              </div>
+              <div class="screen-body">
+                <div class="warn-box">この承認URLと認証コードはご本人専用です。第三者への転送はお控えください。</div>
+                <div class="field-group">
+                  <div class="field"><label>申請者 / 件名</label><div class="value"><strong>山田 太郎</strong><br>理事会出席に伴う出張費申請</div></div>
+                  <div class="cols-2">
+                    <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
+                    <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
+                  </div>
+                  <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せのための出張費申請。添付資料URLから明細確認可。</div></div>
+                  <div class="field"><label>承認ルート</label>
+                    <div class="route">
+                      <span class="step done">担当理事</span>
+                      <span>→</span>
+                      <span class="step current">顧問</span>
+                      <span>→</span>
+                      <span class="step">会長</span>
+                    </div>
+                    <div class="meta top8">現在の承認ステップ：顧問</div>
+                  </div>
+                  <div class="field"><label>認証コード</label><div class="value">[ 4 8 2 9 1 3 ]</div></div>
+                  <div class="field"><label>コメント</label><div class="value placeholder">コメントを入力</div></div>
+                </div>
+                <div class="btn-stack">
+                  <button class="btn approve" type="button">承認する</button>
+                  <button class="btn return" type="button">差戻し</button>
+                  <button class="btn reject" type="button">却下</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="complete">
+              <div class="screen-head success-head">
+                <small>承認完了</small>
+                <h3>承認を受け付けました</h3>
+              </div>
+              <div class="screen-body">
+                <div class="result-card success">
+                  <div class="result-icon">✓</div>
+                  <strong>処理が正常に完了しました</strong>
+                  <span>ご本人と事務局へ完了通知が送信されます。</span>
+                </div>
+                <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
+                <div class="field"><label>承認結果</label><div class="value"><strong>顧問 承認</strong></div></div>
+                <div class="field"><label>承認日時</label><div class="value">2026/07/02 09:30</div></div>
+                <div class="field"><label>コメント</label><div class="value">内容を確認しました。承認します。</div></div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="return">
+              <div class="screen-head warning-head">
+                <small>差戻し・却下</small>
+                <h3>処理結果の確認</h3>
+              </div>
+              <div class="screen-body">
+                <div class="split-cards mobile-split">
+                  <div class="result-card warning">
+                    <div class="result-icon">↺</div>
+                    <strong>差戻し</strong>
+                    <span>申請者へ修正依頼を通知</span>
+                  </div>
+                  <div class="result-card danger">
+                    <div class="result-icon">!</div>
+                    <strong>却下</strong>
+                    <span>申請者へ却下結果を通知</span>
+                  </div>
+                </div>
+                <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
+                <div class="field"><label>差戻しコメント例</label><div class="value">宿泊費の領収書URLを追加のうえ、再申請してください。</div></div>
+                <div class="field"><label>却下コメント例</label><div class="value">今回の申請内容は予算計画対象外のため、却下とします。</div></div>
+                <div class="card subtext">差戻しの場合は、申請者が修正後に再申請できるイメージを明示しています。</div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="list">
+              <div class="screen-head">
+                <small>事務局管理</small>
+                <h3>申請一覧・管理</h3>
+              </div>
+              <div class="screen-body">
+                <div class="field"><label>検索・絞り込み</label><div class="value">申請者名 / ステータス / 申請種別 / 期間指定</div></div>
+                <div class="list-card">
+                  <div class="list-top"><div><strong>2026-0001 理事会出張費申請</strong><div class="meta">山田 太郎 / 出張申請 / 現在の承認者：顧問</div></div><span class="status wait">承認待ち</span></div>
+                </div>
+                <div class="list-card">
+                  <div class="list-top"><div><strong>2026-0002 試合球購入申請</strong><div class="meta">鈴木 花子 / 備品購入 / 最終承認済み</div></div><span class="status done">承認完了</span></div>
+                </div>
+                <div class="list-card">
+                  <div class="list-top"><div><strong>2026-0003 会場使用料精算</strong><div class="meta">佐々木 健 / 経費申請 / 修正待ち</div></div><span class="status back">差戻し</span></div>
+                </div>
+                <div class="list-card">
+                  <div class="list-top"><div><strong>2026-0004 備品補充申請</strong><div class="meta">高橋 守 / 備品購入 / URL有効期限切れ</div></div><span class="status expired">期限切れ</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="detail">
+              <div class="screen-head">
+                <small>申請詳細</small>
+                <h3>詳細・承認履歴</h3>
+              </div>
+              <div class="screen-body">
+                <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せに伴う出張費申請。会議資料確認済み。</div></div>
+                <div class="summary-box">
+                  <div class="card-title">金額内訳</div>
+                  <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+                  <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+                  <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+                  <div class="sum-row total"><span>合計</span><strong>28,300円</strong></div>
+                </div>
+                <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+                <div class="timeline">
+                  <div class="timeline-item"><strong>2026/07/01 10:00</strong><span>申請作成</span></div>
+                  <div class="timeline-item"><strong>2026/07/01 13:15</strong><span>担当理事 承認</span></div>
+                  <div class="timeline-item"><strong>2026/07/02 09:30</strong><span>顧問 承認</span></div>
+                  <div class="timeline-item"><strong>2026/07/02 11:00</strong><span>会長 承認</span></div>
+                  <div class="timeline-item"><strong>2026/07/02 11:05</strong><span>最終承認完了</span></div>
+                </div>
+                <div class="btn-row two-btns">
+                  <button class="btn ghost" type="button">PDF出力</button>
+                  <button class="btn navy" type="button">再通知</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="error">
+              <div class="screen-head danger-head">
+                <small>エラー画面</small>
+                <h3>手続き状況を確認できません</h3>
+              </div>
+              <div class="screen-body">
+                <div class="error-card"><strong>URLが無効です</strong><span>送付されたURLをご確認ください。</span></div>
+                <div class="error-card"><strong>有効期限が切れています</strong><span>事務局へ再通知をご依頼ください。</span></div>
+                <div class="error-card"><strong>すでに承認済みです</strong><span>このURLは再利用できません。</span></div>
+                <div class="error-card"><strong>認証コードが違います</strong><span>6桁コードを再度ご確認ください。</span></div>
+                <div class="error-card"><strong>この申請はすでに終了しています</strong><span>詳細は事務局へお問い合わせください。</span></div>
+                <div class="card subtext">怖さを抑えた丁寧な文言で、事務局への問い合わせ導線を自然に表示しています。</div>
+              </div>
+            </div>
+
+            <div class="screen" data-screen="mail">
+              <div class="screen-head">
+                <small>メール通知</small>
+                <h3>承認依頼メール</h3>
+              </div>
+              <div class="screen-body">
+                <div class="mail-card">
+                  <div class="mail-subject">件名： 【承認依頼】出張費申請 2026-0001</div>
+                  <div class="mail-body">
+                    <p>佐藤 一郎 様</p>
+                    <p>以下の申請について、承認確認をお願いいたします。</p>
+                    <p>申請ID：2026-0001<br>件名：理事会出席に伴う出張費申請<br>申請者：山田 太郎<br>金額：28,300円</p>
+                    <p class="mail-link">承認画面を開く</p>
+                    <p>認証コード：482913<br>有効期限：2026年7月8日 23:59</p>
+                    <p class="mail-note">※このURLと認証コードはご本人専用です。<br>※第三者への転送はお控えください。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel desktop-view">
+          <div class="desktop-screen active" data-screen="top">
+            <div class="desktop-header"><div><h3>1. トップページ</h3><p>申請者・承認者・事務局が迷わず入口を選べる構成です。白背景とネイビー基調で、団体運営らしい信頼感を出しています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-menu">
+              <div class="menu-card"><strong>新規申請</strong><span>紙の申請書の代わりにオンラインで申請開始</span></div>
+              <div class="menu-card"><strong>申請状況確認</strong><span>申請IDで進捗・承認状況を確認</span></div>
+              <div class="menu-card"><strong>管理者ログイン</strong><span>一覧・詳細・再通知・履歴管理</span></div>
+              <div class="menu-card"><strong>操作ガイド</strong><span>高齢層にも読みやすい説明導線</span></div>
+            </div>
+            <div class="desktop-note-box">トップには「出張申請・経費申請・備品購入申請などをオンラインで申請・承認できるシステムです。」という説明文を配置し、導入意図がすぐ伝わる構成にしています。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="form">
+            <div class="desktop-header"><div><h3>2. 申請フォーム画面</h3><p>カード型・縦並びを基本にし、スマホでも読みやすく、PCでは適度に情報を整理して見せる構成です。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2">
+              <div class="field-group">
+                <div class="field"><label>基本情報</label><div class="value">申請者名 / メールアドレス / 所属・役職 / 申請種別</div></div>
+                <div class="field"><label>申請内容</label><div class="value">件名 / 申請内容 / 出張日または利用日 / 出張先・購入先 / 目的</div></div>
+                <div class="field"><label>添付・備考</label><div class="value">添付資料URL / 備考</div></div>
+              </div>
+              <div class="summary-box">
+                <div class="card-title">費用サマリー</div>
+                <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+                <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+                <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+                <div class="sum-row total"><span>合計</span><strong>28,300円</strong></div>
+              </div>
+            </div>
+            <div class="desktop-note-box">金額入力部分を独立したサマリーとして見せることで、交通費・宿泊費・その他費用・合計金額の関係が直感的に理解できます。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="confirm">
+            <div class="desktop-header"><div><h3>3. 申請内容確認画面</h3><p>申請前に、入力内容と承認ルートを落ち着いて確認できる画面です。誤送信や入力漏れを防ぐための最終確認として見せています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2 equal">
+              <div class="field-group">
+                <div class="field"><label>申請基本情報</label><div class="value">申請ID 2026-0001 / 山田 太郎 / 出張申請</div></div>
+                <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+                <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+              </div>
+              <div class="field-group">
+                <div class="summary-box"><div class="card-title">金額</div><div class="sum-row total no-border"><span>合計申請額</span><strong>28,300円</strong></div></div>
+                <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+                <div class="field"><label>承認ルート</label><div class="route"><span class="step current">担当理事</span><span>→</span><span class="step">顧問</span><span>→</span><span class="step">会長</span></div></div>
+              </div>
+            </div>
+            <div class="desktop-note-box">承認ルートをステップ表示にすることで、誰がどの順で承認するのかを一目で理解できます。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="approval">
+            <div class="desktop-header"><div><h3>4. 承認者向け承認画面</h3><p>スマホのメールから開くことを前提に、「いま何の申請を、どの立場で判断するか」が一目で分かるようにしています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2 equal">
+              <div class="field-group">
+                <div class="field"><label>申請概要</label><div class="value">申請ID 2026-0001 / 山田 太郎 / 出張申請 / 28,300円</div></div>
+                <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せのための出張費申請。添付資料URLから明細も確認できます。</div></div>
+                <div class="field"><label>承認ルート</label><div class="route"><span class="step done">担当理事</span><span>→</span><span class="step current">顧問</span><span>→</span><span class="step">会長</span></div></div>
+              </div>
+              <div class="field-group">
+                <div class="warn-box">本人専用URL / 6桁認証コード / 有効期限付き / 一度承認したURLは再利用不可</div>
+                <div class="field"><label>認証コード入力欄</label><div class="fake-input">482913</div></div>
+                <div class="field"><label>コメント入力欄</label><div class="fake-input placeholder">承認コメントを入力</div></div>
+                <div class="btn-stack">
+                  <button class="btn approve" type="button">承認する</button>
+                  <button class="btn return" type="button">差戻し</button>
+                  <button class="btn reject" type="button">却下</button>
+                </div>
+              </div>
+            </div>
+            <div class="desktop-note-box">承認の本人確認に必要な情報を画面内に明示しつつ、操作ボタンは色とサイズで判断しやすくしています。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="complete">
+            <div class="desktop-header"><div><h3>5. 承認完了画面</h3><p>「ちゃんと受け付けられた」と安心してもらうための完了画面です。結果・日時・通知先を簡潔に伝えます。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2 equal">
+              <div class="result-card success large"><div class="result-icon">✓</div><strong>承認を受け付けました</strong><span>本人と事務局へ通知されます。</span></div>
+              <div class="field-group">
+                <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
+                <div class="field"><label>承認結果</label><div class="value">顧問 承認</div></div>
+                <div class="field"><label>承認日時</label><div class="value">2026/07/02 09:30</div></div>
+                <div class="field"><label>コメント</label><div class="value">内容を確認しました。承認します。</div></div>
+              </div>
+            </div>
+            <div class="desktop-note-box">完了画面に事務局通知の案内を入れることで、利用者に処理後の見通しを与えます。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="return">
+            <div class="desktop-header"><div><h3>6. 差戻し・却下画面</h3><p>差戻しと却下は意味が異なるため、色と文言で明確に区別します。差戻しは再申請可能な印象を伝えます。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2 equal">
+              <div class="result-card warning large"><div class="result-icon">↺</div><strong>差戻し</strong><span>申請者へ修正依頼を通知し、再申請につなげます。</span></div>
+              <div class="result-card danger large"><div class="result-icon">!</div><strong>却下</strong><span>却下理由を明示し、申請者へ結果を通知します。</span></div>
+            </div>
+            <div class="desktop-note-box">差戻しコメント例：「宿泊費の領収書URLを追加のうえ、再申請してください。」 / 却下コメント例：「今回の申請内容は予算計画対象外のため、却下とします。」</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="list">
+            <div class="desktop-header"><div><h3>7. 申請一覧・管理画面</h3><p>事務局や管理者が申請全体を俯瞰しやすいように、検索・絞り込み・ステータス一覧を業務システムらしく整理しています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="filters">
+              <div class="filter">申請者名検索</div>
+              <div class="filter">ステータス絞り込み</div>
+              <div class="filter">申請種別絞り込み</div>
+              <div class="filter">期間指定</div>
+            </div>
+            <div class="table">
+              <div class="tr head"><div>申請ID</div><div>申請日</div><div>申請者</div><div>種別</div><div>件名</div><div>金額</div><div>状態</div><div>現在の承認者</div></div>
+              <div class="tr"><div>2026-0001</div><div>07/01</div><div>山田 太郎</div><div>出張</div><div>理事会出席に伴う出張費申請</div><div>28,300円</div><div><span class="status wait">承認待ち</span></div><div>顧問</div></div>
+              <div class="tr"><div>2026-0002</div><div>07/01</div><div>鈴木 花子</div><div>備品</div><div>試合球購入申請</div><div>56,000円</div><div><span class="status done">承認完了</span></div><div>—</div></div>
+              <div class="tr"><div>2026-0003</div><div>07/02</div><div>佐々木 健</div><div>経費</div><div>会場使用料精算</div><div>12,400円</div><div><span class="status back">差戻し</span></div><div>申請者修正中</div></div>
+              <div class="tr"><div>2026-0004</div><div>07/03</div><div>高橋 守</div><div>備品</div><div>備品補充申請</div><div>18,900円</div><div><span class="status expired">期限切れ</span></div><div>担当理事</div></div>
+            </div>
+            <div class="desktop-note-box">ステータスは色付きラベルで表示し、詳細画面への導線につなげる想定です。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="detail">
+            <div class="desktop-header"><div><h3>8. 申請詳細・承認履歴画面</h3><p>申請内容の確認と、承認履歴・コメント履歴の追跡を両立する画面です。あとから確認できる安心感を重視しています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="desktop-grid-2">
+              <div class="field-group">
+                <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せに伴う出張費申請。会議資料確認済み。</div></div>
+                <div class="summary-box"><div class="card-title">金額内訳</div><div class="sum-row"><span>交通費</span><strong>8,500円</strong></div><div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div><div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div><div class="sum-row total"><span>合計</span><strong>28,300円</strong></div></div>
+                <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+                <div class="btn-row two-btns"><button class="btn ghost" type="button">PDF出力</button><button class="btn navy" type="button">再通知</button></div>
+              </div>
+              <div class="timeline large">
+                <div class="timeline-item"><strong>2026/07/01 10:00</strong><span>申請作成</span></div>
+                <div class="timeline-item"><strong>2026/07/01 13:15</strong><span>担当理事 承認</span></div>
+                <div class="timeline-item"><strong>2026/07/02 09:30</strong><span>顧問 承認</span></div>
+                <div class="timeline-item"><strong>2026/07/02 11:00</strong><span>会長 承認</span></div>
+                <div class="timeline-item"><strong>2026/07/02 11:05</strong><span>最終承認完了</span></div>
+              </div>
+            </div>
+            <div class="desktop-note-box">タイムライン形式にすることで、誰がいつ承認したかを時系列で直感的に把握できます。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="error">
+            <div class="desktop-header"><div><h3>9. エラー画面</h3><p>怖い印象ではなく、丁寧に状況を説明し、事務局への問い合わせへ自然につなげる設計です。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="error-grid">
+              <div class="error-card"><strong>URLが無効です</strong><span>送付されたURLをご確認ください。</span></div>
+              <div class="error-card"><strong>有効期限が切れています</strong><span>事務局へ再通知をご依頼ください。</span></div>
+              <div class="error-card"><strong>すでに承認済みです</strong><span>このURLは再利用できません。</span></div>
+              <div class="error-card"><strong>認証コードが違います</strong><span>6桁コードを再度ご確認ください。</span></div>
+              <div class="error-card"><strong>この申請はすでに終了しています</strong><span>詳細は事務局へお問い合わせください。</span></div>
+            </div>
+            <div class="desktop-note-box">「事務局へお問い合わせください」という案内を自然に入れ、利用者が次に何をすればよいか迷わないようにしています。</div>
+          </div>
+
+          <div class="desktop-screen" data-screen="mail">
+            <div class="desktop-header"><div><h3>10. メール通知文面イメージ</h3><p>承認依頼メールの見た目も提案資料に含め、本人専用URL・認証コード・有効期限の考え方が自然に伝わるようにしています。</p></div><div class="desktop-meta">PCプレビュー</div></div>
+            <div class="mail-card large">
+              <div class="mail-subject">件名： 【承認依頼】出張費申請 2026-0001</div>
+              <div class="mail-body">
+                <p>佐藤 一郎 様</p>
+                <p>以下の申請について、承認確認をお願いいたします。</p>
+                <p>申請ID：2026-0001<br>件名：理事会出席に伴う出張費申請<br>申請者：山田 太郎<br>金額：28,300円</p>
+                <p class="mail-link">承認画面を開く</p>
+                <p>認証コード：482913<br>有効期限：2026年7月8日 23:59</p>
+                <p class="mail-note">※このURLと認証コードはご本人専用です。<br>※第三者への転送はお控えください。</p>
+              </div>
+            </div>
+            <div class="desktop-note-box">メール文面も業務システムとして丁寧で読みやすくし、スマホで読んでも必要情報が埋もれない構成にしています。</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      この一式は GitHub Pages にそのまま配置できる公開用ファイルです。静的サイトとしてアップロードするだけで、10画面フル版デモを公開できます。
+    </div>
+  </main>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
