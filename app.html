@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="大学サッカー連盟向けオンライン承認システム スマホ実機向けアプリ版デモ" />
+  <title>オンライン承認システム（アプリ版デモ）</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="app-page">
+  <div class="app-bar">
+    <div class="app-bar-brand">
+      <span class="app-bar-mark">承</span>
+      <span class="app-bar-title">オンライン承認システム</span>
+    </div>
+    <button type="button" class="app-reset-btn" id="appResetBtn">最初からやり直す</button>
+  </div>
+
+  <main class="app-shell">
+    <div class="screen active" data-screen="top">
+      <div class="screen-head">
+        <small>大学サッカー連盟</small>
+        <h3>オンライン承認システム</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">共通入口</span>下のカードをタップすると体験が始まります</div>
+        <div class="card subtext">出張申請・経費申請・備品購入申請などをオンラインで申請・承認できるシステムです。</div>
+        <div class="menu-cards">
+          <div class="menu-card" data-next="form"><strong>新規申請</strong><span>出張・経費・備品購入</span></div>
+          <div class="menu-card" data-next="detail"><strong>申請状況確認</strong><span>申請IDで進捗確認</span></div>
+          <div class="menu-card" data-next="list"><strong>管理者ログイン</strong><span>事務局・管理者向け</span></div>
+          <div class="menu-card"><strong>操作ガイド</strong><span>はじめての方へ</span></div>
+        </div>
+        <div class="card">
+          <div class="card-title">システムの特長</div>
+          <div class="subtext">Googleアカウント不要。承認者ごとの専用URLと6桁認証コードで本人確認し、承認履歴を保存します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="form">
+      <div class="screen-head">
+        <small>新規申請</small>
+        <h3>出張費申請フォーム</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">申請者</span>内容を確認後、下のボタンで次へ進みます</div>
+        <div class="field-group">
+          <div class="field"><label>申請者名</label><div class="value">山田 太郎</div></div>
+          <div class="field"><label>メールアドレス</label><div class="value">t.yamada@example.jp</div></div>
+          <div class="field"><label>所属・役職</label><div class="value">競技運営部 / 理事</div></div>
+          <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
+          <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+          <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+          <div class="cols-2">
+            <div class="field"><label>利用日</label><div class="value">2026/07/08</div></div>
+            <div class="field"><label>出張先</label><div class="value">東京都千代田区</div></div>
+          </div>
+          <div class="field"><label>目的</label><div class="value">理事会出席 / 競技運営打合せ</div></div>
+          <div class="summary-box">
+            <div class="card-title">金額内訳</div>
+            <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+            <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+            <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+            <div class="sum-row total"><span>合計金額</span><strong>28,300円</strong></div>
+          </div>
+        </div>
+        <div class="btn-single"><button class="btn navy" type="button" data-next="confirm">確認画面へ進む</button></div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="confirm">
+      <div class="screen-head">
+        <small>申請前確認</small>
+        <h3>入力内容の確認</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">申請者</span>入力内容に誤りがなければ送信してください</div>
+        <div class="field"><label>申請ID</label><div class="value"><strong>2026-0001</strong></div></div>
+        <div class="field"><label>申請者 / 申請種別</label><div class="value">山田 太郎 / 出張申請</div></div>
+        <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+        <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
+        <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+        <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+        <div class="field"><label>承認ルート</label>
+          <div class="route">
+            <span class="step current">担当理事</span>
+            <span>→</span>
+            <span class="step">顧問</span>
+            <span>→</span>
+            <span class="step">会長</span>
+          </div>
+        </div>
+        <div class="btn-single"><button class="btn navy" type="button" data-next="mail">この内容で申請する</button></div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="approval">
+      <div class="screen-head">
+        <small>承認依頼</small>
+        <h3>申請 2026-0001 を確認</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">承認者</span>承認・差戻し・却下のいずれかを選択してください</div>
+        <div class="warn-box">この承認URLと認証コードはご本人専用です。第三者への転送はお控えください。</div>
+        <div class="field-group">
+          <div class="field"><label>申請者 / 件名</label><div class="value"><strong>山田 太郎</strong><br>理事会出席に伴う出張費申請</div></div>
+          <div class="cols-2">
+            <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
+            <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
+          </div>
+          <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せのための出張費申請。添付資料URLから明細確認可。</div></div>
+          <div class="field"><label>承認ルート</label>
+            <div class="route">
+              <span class="step done">担当理事</span>
+              <span>→</span>
+              <span class="step current">顧問</span>
+              <span>→</span>
+              <span class="step">会長</span>
+            </div>
+            <div class="meta top8">現在の承認ステップ：顧問</div>
+          </div>
+          <div class="field"><label>認証コード</label><div class="value">[ 4 8 2 9 1 3 ]</div></div>
+          <div class="field"><label>コメント</label><div class="value placeholder">コメントを入力</div></div>
+        </div>
+        <div class="btn-stack">
+          <button class="btn approve" type="button" data-next="complete" data-result="approve">承認する</button>
+          <button class="btn return" type="button" data-next="return" data-result="back">差戻し</button>
+          <button class="btn reject" type="button" data-next="return" data-result="reject">却下</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="complete">
+      <div class="screen-head success-head">
+        <small>承認完了</small>
+        <h3>承認を受け付けました</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">完了</span>続けて一覧や詳細画面を確認できます</div>
+        <div class="result-card success">
+          <div class="result-icon">✓</div>
+          <strong>処理が正常に完了しました</strong>
+          <span>ご本人と事務局へ完了通知が送信されます。</span>
+        </div>
+        <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
+        <div class="field"><label>承認結果</label><div class="value"><strong>顧問 承認</strong></div></div>
+        <div class="field"><label>承認日時</label><div class="value">2026/07/02 09:30</div></div>
+        <div class="field"><label>コメント</label><div class="value">内容を確認しました。承認します。</div></div>
+        <div class="btn-row two-btns">
+          <button class="btn ghost" type="button" data-next="list">申請一覧へ</button>
+          <button class="btn navy" type="button" data-next="detail">詳細を見る</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="return">
+      <div class="screen-head warning-head">
+        <small>差戻し・却下</small>
+        <h3>処理結果の確認</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">差戻し・却下</span>選択結果に応じて該当カードが強調表示されます</div>
+        <div class="result-banner" data-result-banner hidden></div>
+        <div class="split-cards mobile-split">
+          <div class="result-card warning" data-variant="back">
+            <div class="result-icon">↺</div>
+            <strong>差戻し</strong>
+            <span>申請者へ修正依頼を通知</span>
+          </div>
+          <div class="result-card danger" data-variant="reject">
+            <div class="result-icon">!</div>
+            <strong>却下</strong>
+            <span>申請者へ却下結果を通知</span>
+          </div>
+        </div>
+        <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
+        <div class="field"><label>差戻しコメント例</label><div class="value">宿泊費の領収書URLを追加のうえ、再申請してください。</div></div>
+        <div class="field"><label>却下コメント例</label><div class="value">今回の申請内容は予算計画対象外のため、却下とします。</div></div>
+        <div class="card subtext">差戻しの場合は、申請者が修正後に再申請できるイメージを明示しています。</div>
+        <div class="btn-row two-btns">
+          <button class="btn ghost" type="button" data-next="list">申請一覧へ</button>
+          <button class="btn navy" type="button" data-next="top">トップに戻る</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="list">
+      <div class="screen-head">
+        <small>事務局管理</small>
+        <h3>申請一覧・管理</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">事務局</span>行をタップすると詳細画面に進みます</div>
+        <div class="field"><label>検索・絞り込み</label><div class="value">申請者名 / ステータス / 申請種別 / 期間指定</div></div>
+        <div class="list-card" data-next="detail">
+          <div class="list-top"><div><strong>2026-0001 理事会出張費申請</strong><div class="meta">山田 太郎 / 出張申請 / 現在の承認者：顧問</div></div><span class="status wait">承認待ち</span></div>
+        </div>
+        <div class="list-card" data-next="detail">
+          <div class="list-top"><div><strong>2026-0002 試合球購入申請</strong><div class="meta">鈴木 花子 / 備品購入 / 最終承認済み</div></div><span class="status done">承認完了</span></div>
+        </div>
+        <div class="list-card" data-next="detail">
+          <div class="list-top"><div><strong>2026-0003 会場使用料精算</strong><div class="meta">佐々木 健 / 経費申請 / 修正待ち</div></div><span class="status back">差戻し</span></div>
+        </div>
+        <div class="list-card" data-next="detail">
+          <div class="list-top"><div><strong>2026-0004 備品補充申請</strong><div class="meta">高橋 守 / 備品購入 / URL有効期限切れ</div></div><span class="status expired">期限切れ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="detail">
+      <div class="screen-head">
+        <small>申請詳細</small>
+        <h3>詳細・承認履歴</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">事務局</span>再通知ボタンでメール画面に進めます</div>
+        <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せに伴う出張費申請。会議資料確認済み。</div></div>
+        <div class="summary-box">
+          <div class="card-title">金額内訳</div>
+          <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+          <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+          <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+          <div class="sum-row total"><span>合計</span><strong>28,300円</strong></div>
+        </div>
+        <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
+        <div class="timeline">
+          <div class="timeline-item"><strong>2026/07/01 10:00</strong><span>申請作成</span></div>
+          <div class="timeline-item"><strong>2026/07/01 13:15</strong><span>担当理事 承認</span></div>
+          <div class="timeline-item"><strong>2026/07/02 09:30</strong><span>顧問 承認</span></div>
+          <div class="timeline-item"><strong>2026/07/02 11:00</strong><span>会長 承認</span></div>
+          <div class="timeline-item"><strong>2026/07/02 11:05</strong><span>最終承認完了</span></div>
+        </div>
+        <div class="btn-row two-btns">
+          <button class="btn ghost" type="button">PDF出力</button>
+          <button class="btn navy" type="button" data-next="mail">再通知</button>
+        </div>
+        <div class="btn-single"><button class="btn ghost" type="button" data-next="list">申請一覧へ戻る</button></div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="error">
+      <div class="screen-head danger-head">
+        <small>エラー画面</small>
+        <h3>手続き状況を確認できません</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">エラー時</span>右上の「最初からやり直す」でトップに戻れます</div>
+        <div class="error-card"><strong>URLが無効です</strong><span>送付されたURLをご確認ください。</span></div>
+        <div class="error-card"><strong>有効期限が切れています</strong><span>事務局へ再通知をご依頼ください。</span></div>
+        <div class="error-card"><strong>すでに承認済みです</strong><span>このURLは再利用できません。</span></div>
+        <div class="error-card"><strong>認証コードが違います</strong><span>6桁コードを再度ご確認ください。</span></div>
+        <div class="error-card"><strong>この申請はすでに終了しています</strong><span>詳細は事務局へお問い合わせください。</span></div>
+        <div class="card subtext">怖さを抑えた丁寧な文言で、事務局への問い合わせ導線を自然に表示しています。</div>
+        <div class="btn-single"><button class="btn navy" type="button" data-next="top">トップに戻る</button></div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="mail">
+      <div class="screen-head">
+        <small>メール通知</small>
+        <h3>承認依頼メール</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">承認者へのメール</span>本文中のリンクをタップすると承認画面が開きます</div>
+        <div class="mail-card">
+          <div class="mail-subject">件名： 【承認依頼】出張費申請 2026-0001</div>
+          <div class="mail-body">
+            <p>佐藤 一郎 様</p>
+            <p>以下の申請について、承認確認をお願いいたします。</p>
+            <p>申請ID：2026-0001<br>件名：理事会出席に伴う出張費申請<br>申請者：山田 太郎<br>金額：28,300円</p>
+            <p class="mail-link" data-next="approval">承認画面を開く</p>
+            <p>認証コード：482913<br>有効期限：2026年7月8日 23:59</p>
+            <p class="mail-note">※このURLと認証コードはご本人専用です。<br>※第三者への転送はお控えください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/main.js"></script>
+  <script>
+    var appResetBtn = document.getElementById('appResetBtn');
+    if (appResetBtn) {
+      appResetBtn.addEventListener('click', function () {
+        delete document.body.dataset.flowResult;
+        switchScreen('top');
+      });
+    }
+  </script>
+</body>
+</html>
