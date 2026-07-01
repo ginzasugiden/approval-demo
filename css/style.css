@@ -1475,3 +1475,253 @@ body.app-page {
     width: 100%;
   }
 }
+
+/* 書類選択画面 */
+.doc-category {
+  display: grid;
+  gap: 10px;
+}
+
+.doc-category + .doc-category {
+  margin-top: 4px;
+}
+
+.doc-category-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.doc-card {
+  border: 1px solid var(--gray-2);
+  border-radius: 16px;
+  padding: 13px;
+  background: linear-gradient(180deg, #fff, #fbfcfe);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.doc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(23, 50, 77, 0.1);
+  border-color: #c4d2e0;
+}
+
+.doc-card strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.doc-card span {
+  color: var(--gray-3);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.desktop-doc-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 申請フォーム：編集可能な欄 */
+.doc-template {
+  display: none;
+}
+
+body[data-doc-type="travel"] .doc-template[data-doc-template="travel"],
+body[data-doc-type="student"] .doc-template[data-doc-template="student"],
+body[data-doc-type="generic"] .doc-template[data-doc-template="generic"] {
+  display: block;
+}
+
+.value.editable {
+  border: 1px dashed #c4d2e0;
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: #fbfdff;
+  outline: none;
+  min-height: 44px;
+  cursor: text;
+}
+
+.value.editable:focus {
+  border-style: solid;
+  border-color: var(--navy-2);
+  background: var(--white);
+}
+
+.field-hint {
+  display: block;
+  color: var(--gray-3);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* 決裁欄・承認印（ハンコ） */
+.kessai-ran {
+  display: flex;
+  gap: 10px;
+}
+
+.kessai-cell {
+  flex: 1;
+  min-height: 110px;
+  border: 1px solid var(--gray-2);
+  border-radius: 14px;
+  background: var(--white);
+  padding: 10px 6px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.kessai-role-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--gray-3);
+  letter-spacing: 0.02em;
+}
+
+.kessai-cell.pending {
+  border-style: dashed;
+  border-color: #c7d0da;
+  background: #fbfcfe;
+}
+
+.kessai-pending-mark {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 12px;
+  color: #9aa5b1;
+  font-weight: 700;
+}
+
+.seal {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 3px solid var(--red);
+  color: var(--red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  margin-top: 2px;
+}
+
+.seal-role {
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.seal-word {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.seal-date {
+  font-size: 8px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.kessai-cell.stamped .seal {
+  animation: seal-stamp 0.45s ease;
+}
+
+@keyframes seal-stamp {
+  0% {
+    transform: scale(1.3) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.94) rotate(-8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kessai-cell.stamped .seal {
+    animation: none;
+  }
+}
+
+.decision-badge {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--white);
+  transform: rotate(-8deg);
+  margin-top: 2px;
+}
+
+.kessai-cell.state-reject .decision-badge {
+  background: var(--red);
+}
+
+.kessai-cell.state-return .decision-badge {
+  background: var(--orange);
+}
+
+.kessai-ran.large .kessai-cell {
+  min-height: 150px;
+}
+
+.kessai-ran.large .seal {
+  width: 84px;
+  height: 84px;
+}
+
+.kessai-ran.large .seal-role {
+  font-size: 12px;
+}
+
+.kessai-ran.large .seal-word {
+  font-size: 16px;
+}
+
+.kessai-ran.large .seal-date {
+  font-size: 10px;
+}
+
+@media (max-width: 720px) {
+  .doc-grid,
+  .desktop-doc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .kessai-ran {
+    gap: 6px;
+  }
+
+  .seal,
+  .decision-badge {
+    width: 52px;
+    height: 52px;
+  }
+}

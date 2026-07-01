@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="大学サッカー連盟向けオンライン承認システム スマホ実機向けアプリ版デモ" />
-  <title>オンライン承認システム（アプリ版デモ）</title>
+  <meta name="description" content="KK大学 学内決裁システム スマホ実機向けアプリ版デモ" />
+  <title>KK大学 学内決裁システム（アプリ版デモ）</title>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body class="app-page">
   <div class="app-bar">
     <div class="app-bar-brand">
-      <span class="app-bar-mark">承</span>
-      <span class="app-bar-title">オンライン承認システム</span>
+      <span class="app-bar-mark">決</span>
+      <span class="app-bar-title">KK大学 学内決裁システム</span>
     </div>
     <button type="button" class="app-reset-btn" id="appResetBtn">最初からやり直す</button>
   </div>
@@ -19,21 +19,55 @@
   <main class="app-shell">
     <div class="screen active" data-screen="top">
       <div class="screen-head">
-        <small>大学サッカー連盟</small>
-        <h3>オンライン承認システム</h3>
+        <small>KK大学</small>
+        <h3>学内決裁システム</h3>
       </div>
       <div class="screen-body">
         <div class="flow-guide"><span class="role-badge">共通入口</span>下のカードをタップすると体験が始まります</div>
-        <div class="card subtext">出張申請・経費申請・備品購入申請などをオンラインで申請・承認できるシステムです。</div>
+        <div class="card subtext">出張申請や学生の各種申請書類などをオンラインで申請・決裁できるシステムです。</div>
         <div class="menu-cards">
-          <div class="menu-card" data-next="form"><strong>新規申請</strong><span>出張・経費・備品購入</span></div>
+          <div class="menu-card" data-next="select"><strong>新規申請</strong><span>書類を選んで申請開始</span></div>
           <div class="menu-card" data-next="detail"><strong>申請状況確認</strong><span>申請IDで進捗確認</span></div>
-          <div class="menu-card" data-next="list"><strong>管理者ログイン</strong><span>事務局・管理者向け</span></div>
+          <div class="menu-card" data-next="list"><strong>管理者ログイン</strong><span>事務室・管理者向け</span></div>
           <div class="menu-card"><strong>操作ガイド</strong><span>はじめての方へ</span></div>
         </div>
         <div class="card">
           <div class="card-title">システムの特長</div>
-          <div class="subtext">Googleアカウント不要。承認者ごとの専用URLと6桁認証コードで本人確認し、承認履歴を保存します。</div>
+          <div class="subtext">Googleアカウント不要。決裁者ごとの専用URLと6桁認証コードで本人確認し、決裁履歴を保存します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="select">
+      <div class="screen-head">
+        <small>新規申請</small>
+        <h3>書類を選択してください</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">起案（申請者）</span>作成する書類をタップして選んでください</div>
+        <div class="doc-category">
+          <div class="doc-category-title">出張・旅費</div>
+          <div class="doc-grid">
+            <div class="doc-card" data-next="form" data-doc-type="travel" data-doc-name="出張申請書"><strong>出張申請書</strong><span>出張の目的・行程・費用を申請</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="旅費精算書"><strong>旅費精算書</strong><span>出張後の実費精算を申請</span></div>
+          </div>
+        </div>
+        <div class="doc-category">
+          <div class="doc-category-title">学生関係</div>
+          <div class="doc-grid">
+            <div class="doc-card" data-next="form" data-doc-type="student" data-doc-name="課外活動・行事開催申請書"><strong>課外活動・行事開催申請書</strong><span>部・サークルの行事開催を申請</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="学生団体設立届"><strong>学生団体設立届</strong><span>新規団体の設立を届出</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="施設使用許可申請書"><strong>施設使用許可申請書</strong><span>学内施設の利用を申請</span></div>
+          </div>
+        </div>
+        <div class="doc-category">
+          <div class="doc-category-title">経理・庶務</div>
+          <div class="doc-grid">
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="物品購入申請書"><strong>物品購入申請書</strong><span>備品・消耗品の購入を申請</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="諸経費精算書"><strong>諸経費精算書</strong><span>立替経費の精算を申請</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="休暇届"><strong>休暇届</strong><span>休暇取得を届出</span></div>
+            <div class="doc-card" data-next="form" data-doc-type="generic" data-doc-name="備品修繕依頼書"><strong>備品修繕依頼書</strong><span>備品の修理・交換を依頼</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -41,112 +75,209 @@
     <div class="screen" data-screen="form">
       <div class="screen-head">
         <small>新規申請</small>
-        <h3>出張費申請フォーム</h3>
+        <h3><span data-doc-name-target>出張申請書</span></h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">申請者</span>内容を確認後、下のボタンで次へ進みます</div>
-        <div class="field-group">
-          <div class="field"><label>申請者名</label><div class="value">山田 太郎</div></div>
-          <div class="field"><label>メールアドレス</label><div class="value">t.yamada@example.jp</div></div>
-          <div class="field"><label>所属・役職</label><div class="value">競技運営部 / 理事</div></div>
-          <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
-          <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
-          <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
-          <div class="cols-2">
-            <div class="field"><label>利用日</label><div class="value">2026/07/08</div></div>
-            <div class="field"><label>出張先</label><div class="value">東京都千代田区</div></div>
-          </div>
-          <div class="field"><label>目的</label><div class="value">理事会出席 / 競技運営打合せ</div></div>
-          <div class="summary-box">
-            <div class="card-title">金額内訳</div>
-            <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
-            <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
-            <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
-            <div class="sum-row total"><span>合計金額</span><strong>28,300円</strong></div>
+        <div class="flow-guide"><span class="role-badge">起案（申請者）</span>内容を確認・編集し、下のボタンで次へ進みます</div>
+
+        <div class="doc-template" data-doc-template="travel">
+          <div class="field-group">
+            <div class="field"><label>申請者名</label><div class="value">田中 一郎</div></div>
+            <div class="field"><label>所属・職名</label><div class="value">学務部 教務課 事務職員</div></div>
+            <div class="field"><label>申請種別</label><div class="value" data-doc-name-target>出張申請書</div></div>
+            <div class="field"><label>件名</label><div class="value editable" contenteditable="true" spellcheck="false">私立大学事務研修会 出席のための出張</div><span class="field-hint">タップすると文面を編集できます</span></div>
+            <div class="field"><label>申請内容</label><div class="value editable" contenteditable="true" spellcheck="false">私立大学事務研修会への出席のため、下記の通り出張いたします。</div><span class="field-hint">タップすると文面を編集できます</span></div>
+            <div class="cols-2">
+              <div class="field"><label>出張日</label><div class="value">2026/07/08</div></div>
+              <div class="field"><label>出張先</label><div class="value">東京都</div></div>
+            </div>
+            <div class="summary-box">
+              <div class="card-title">金額内訳</div>
+              <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
+              <div class="sum-row"><span>宿泊費</span><strong>18,000円</strong></div>
+              <div class="sum-row"><span>その他費用</span><strong>1,800円</strong></div>
+              <div class="sum-row total"><span>合計金額</span><strong>28,300円</strong></div>
+            </div>
           </div>
         </div>
+
+        <div class="doc-template" data-doc-template="student">
+          <div class="field-group">
+            <div class="field"><label>申請者名</label><div class="value">佐藤 花子</div></div>
+            <div class="cols-2">
+              <div class="field"><label>学籍番号</label><div class="value">21S1234</div></div>
+              <div class="field"><label>学部・学科・学年</label><div class="value">経済学部 経済学科 3年</div></div>
+            </div>
+            <div class="field"><label>団体名</label><div class="value">◯◯部</div></div>
+            <div class="field"><label>件名</label><div class="value editable" contenteditable="true" spellcheck="false">学内スポーツ交流会の開催</div><span class="field-hint">タップすると文面を編集できます</span></div>
+            <div class="cols-2">
+              <div class="field"><label>実施日時</label><div class="value">2026/07/20 13:00〜17:00</div></div>
+              <div class="field"><label>使用施設</label><div class="value">第一体育館</div></div>
+            </div>
+            <div class="field"><label>参加予定人数</label><div class="value">40名</div></div>
+            <div class="field"><label>目的</label><div class="value editable" contenteditable="true" spellcheck="false">部員相互の親睦を深めるとともに、新入部員の勧誘につなげることを目的とする。</div><span class="field-hint">タップすると文面を編集できます</span></div>
+          </div>
+        </div>
+
+        <div class="doc-template" data-doc-template="generic">
+          <div class="field-group">
+            <div class="field"><label>申請者名</label><div class="value">山田 太郎</div></div>
+            <div class="field"><label>所属・職名</label><div class="value">学務部 教務課 事務職員</div></div>
+            <div class="field"><label>書類種別</label><div class="value" data-doc-name-target>物品購入申請書</div></div>
+            <div class="field"><label>件名</label><div class="value editable" contenteditable="true" spellcheck="false" data-doc-subject-target>物品購入申請書の提出について</div><span class="field-hint">タップすると文面を編集できます</span></div>
+            <div class="field"><label>申請内容</label><div class="value editable" contenteditable="true" spellcheck="false">下記の通り申請いたします。詳細は添付資料をご確認ください。</div><span class="field-hint">タップすると文面を編集できます</span></div>
+            <div class="field"><label>提出日</label><div class="value">2026/07/01</div></div>
+          </div>
+        </div>
+
         <div class="btn-single"><button class="btn navy" type="button" data-next="confirm">確認画面へ進む</button></div>
       </div>
     </div>
 
     <div class="screen" data-screen="confirm">
       <div class="screen-head">
-        <small>申請前確認</small>
+        <small>提出確認</small>
         <h3>入力内容の確認</h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">申請者</span>入力内容に誤りがなければ送信してください</div>
+        <div class="flow-guide"><span class="role-badge">起案（申請者）</span>入力内容に誤りがなければ提出してください</div>
         <div class="field"><label>申請ID</label><div class="value"><strong>2026-0001</strong></div></div>
-        <div class="field"><label>申請者 / 申請種別</label><div class="value">山田 太郎 / 出張申請</div></div>
-        <div class="field"><label>件名</label><div class="value">理事会出席に伴う出張費申請</div></div>
+        <div class="field"><label>申請者 / 書類種別</label><div class="value">田中 一郎 / 出張申請書</div></div>
+        <div class="field"><label>件名</label><div class="value">私立大学事務研修会 出席のための出張</div></div>
         <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
-        <div class="field"><label>申請内容</label><div class="value">関東大学リーグ運営会議への出席、および関係者との打合せに伴う出張費申請。</div></div>
+        <div class="field"><label>申請内容</label><div class="value">私立大学事務研修会への出席のため、下記の通り出張いたします。</div></div>
         <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
-        <div class="field"><label>承認ルート</label>
+        <div class="field"><label>決裁ルート</label>
           <div class="route">
-            <span class="step current">担当理事</span>
+            <span class="step current">起案（申請者）</span>
             <span>→</span>
-            <span class="step">顧問</span>
+            <span class="step">室長</span>
             <span>→</span>
-            <span class="step">会長</span>
+            <span class="step">部長</span>
           </div>
         </div>
-        <div class="btn-single"><button class="btn navy" type="button" data-next="mail">この内容で申請する</button></div>
+        <div class="btn-single"><button class="btn navy" type="button" data-next="mail">この内容で提出する</button></div>
       </div>
     </div>
 
     <div class="screen" data-screen="approval">
       <div class="screen-head">
-        <small>承認依頼</small>
+        <small>決裁依頼</small>
         <h3>申請 2026-0001 を確認</h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">承認者</span>承認・差戻し・却下のいずれかを選択してください</div>
-        <div class="warn-box">この承認URLと認証コードはご本人専用です。第三者への転送はお控えください。</div>
+        <div class="flow-guide"><span class="role-badge">室長</span>決裁・差戻し・却下のいずれかを選択してください</div>
+        <div class="warn-box">この決裁URLと認証コードはご本人専用です。第三者への転送はお控えください。</div>
         <div class="field-group">
-          <div class="field"><label>申請者 / 件名</label><div class="value"><strong>山田 太郎</strong><br>理事会出席に伴う出張費申請</div></div>
+          <div class="field"><label>申請者 / 件名</label><div class="value"><strong>田中 一郎</strong><br>私立大学事務研修会 出席のための出張</div></div>
           <div class="cols-2">
-            <div class="field"><label>申請種別</label><div class="value">出張申請</div></div>
+            <div class="field"><label>書類種別</label><div class="value">出張申請書</div></div>
             <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
           </div>
-          <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せのための出張費申請。添付資料URLから明細確認可。</div></div>
-          <div class="field"><label>承認ルート</label>
-            <div class="route">
-              <span class="step done">担当理事</span>
-              <span>→</span>
-              <span class="step current">顧問</span>
-              <span>→</span>
-              <span class="step">会長</span>
+          <div class="field"><label>申請内容</label><div class="value">私立大学事務研修会への出席のための出張。行程・費用の明細は添付資料から確認可。</div></div>
+          <div class="field"><label>決裁ルート</label>
+            <div class="kessai-ran">
+              <div class="kessai-cell stamped">
+                <span class="kessai-role-label">起案（申請者）</span>
+                <div class="seal"><span class="seal-role">起案</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+              </div>
+              <div class="kessai-cell pending">
+                <span class="kessai-role-label">室長</span>
+                <div class="kessai-pending-mark">未決</div>
+              </div>
+              <div class="kessai-cell pending">
+                <span class="kessai-role-label">部長</span>
+                <div class="kessai-pending-mark">未決</div>
+              </div>
             </div>
-            <div class="meta top8">現在の承認ステップ：顧問</div>
+            <div class="meta top8">現在の決裁ステップ：室長</div>
           </div>
           <div class="field"><label>認証コード</label><div class="value">[ 4 8 2 9 1 3 ]</div></div>
           <div class="field"><label>コメント</label><div class="value placeholder">コメントを入力</div></div>
         </div>
         <div class="btn-stack">
-          <button class="btn approve" type="button" data-next="complete" data-result="approve">承認する</button>
-          <button class="btn return" type="button" data-next="return" data-result="back">差戻し</button>
-          <button class="btn reject" type="button" data-next="return" data-result="reject">却下</button>
+          <button class="btn approve" type="button" data-next="approval2" data-result="approve" data-stage="chief">決裁する</button>
+          <button class="btn return" type="button" data-next="return" data-result="back" data-stage="chief">差戻し</button>
+          <button class="btn reject" type="button" data-next="return" data-result="reject" data-stage="chief">却下</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" data-screen="approval2">
+      <div class="screen-head">
+        <small>決裁依頼</small>
+        <h3>申請 2026-0001 を確認</h3>
+      </div>
+      <div class="screen-body">
+        <div class="flow-guide"><span class="role-badge">部長</span>決裁・差戻し・却下のいずれかを選択してください</div>
+        <div class="warn-box">この決裁URLと認証コードはご本人専用です。第三者への転送はお控えください。</div>
+        <div class="field-group">
+          <div class="field"><label>申請者 / 件名</label><div class="value"><strong>田中 一郎</strong><br>私立大学事務研修会 出席のための出張</div></div>
+          <div class="cols-2">
+            <div class="field"><label>書類種別</label><div class="value">出張申請書</div></div>
+            <div class="field"><label>金額</label><div class="value"><strong>28,300円</strong></div></div>
+          </div>
+          <div class="field"><label>申請内容</label><div class="value">私立大学事務研修会への出席のための出張。行程・費用の明細は添付資料から確認可。室長決裁済み。</div></div>
+          <div class="field"><label>決裁ルート</label>
+            <div class="kessai-ran">
+              <div class="kessai-cell stamped">
+                <span class="kessai-role-label">起案（申請者）</span>
+                <div class="seal"><span class="seal-role">起案</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+              </div>
+              <div class="kessai-cell stamped">
+                <span class="kessai-role-label">室長</span>
+                <div class="seal"><span class="seal-role">室長</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+              </div>
+              <div class="kessai-cell pending">
+                <span class="kessai-role-label">部長</span>
+                <div class="kessai-pending-mark">未決</div>
+              </div>
+            </div>
+            <div class="meta top8">現在の決裁ステップ：部長</div>
+          </div>
+          <div class="field"><label>認証コード</label><div class="value">[ 7 1 0 5 2 6 ]</div></div>
+          <div class="field"><label>コメント</label><div class="value placeholder">コメントを入力</div></div>
+        </div>
+        <div class="btn-stack">
+          <button class="btn approve" type="button" data-next="complete" data-result="approve" data-stage="head">決裁する</button>
+          <button class="btn return" type="button" data-next="return" data-result="back" data-stage="head">差戻し</button>
+          <button class="btn reject" type="button" data-next="return" data-result="reject" data-stage="head">却下</button>
         </div>
       </div>
     </div>
 
     <div class="screen" data-screen="complete">
       <div class="screen-head success-head">
-        <small>承認完了</small>
-        <h3>承認を受け付けました</h3>
+        <small>決裁完了</small>
+        <h3>決裁が完了しました</h3>
       </div>
       <div class="screen-body">
         <div class="flow-guide"><span class="role-badge">完了</span>続けて一覧や詳細画面を確認できます</div>
         <div class="result-card success">
           <div class="result-icon">✓</div>
           <strong>処理が正常に完了しました</strong>
-          <span>ご本人と事務局へ完了通知が送信されます。</span>
+          <span>ご本人と事務室へ完了通知が送信されます。</span>
+        </div>
+        <div class="field"><label>決裁欄</label>
+          <div class="kessai-ran">
+            <div class="kessai-cell stamped">
+              <span class="kessai-role-label">起案（申請者）</span>
+              <div class="seal"><span class="seal-role">起案</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+            </div>
+            <div class="kessai-cell stamped">
+              <span class="kessai-role-label">室長</span>
+              <div class="seal"><span class="seal-role">室長</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+            </div>
+            <div class="kessai-cell stamped">
+              <span class="kessai-role-label">部長</span>
+              <div class="seal"><span class="seal-role">部長</span><span class="seal-word">承認</span><span class="seal-date">07/02</span></div>
+            </div>
+          </div>
         </div>
         <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
-        <div class="field"><label>承認結果</label><div class="value"><strong>顧問 承認</strong></div></div>
-        <div class="field"><label>承認日時</label><div class="value">2026/07/02 09:30</div></div>
-        <div class="field"><label>コメント</label><div class="value">内容を確認しました。承認します。</div></div>
+        <div class="field"><label>決裁結果</label><div class="value"><strong>部長 決裁</strong></div></div>
+        <div class="field"><label>決裁日時</label><div class="value">2026/07/02 09:30</div></div>
+        <div class="field"><label>コメント</label><div class="value">内容を確認しました。決裁します。</div></div>
         <div class="btn-row two-btns">
           <button class="btn ghost" type="button" data-next="list">申請一覧へ</button>
           <button class="btn navy" type="button" data-next="detail">詳細を見る</button>
@@ -174,9 +305,23 @@
             <span>申請者へ却下結果を通知</span>
           </div>
         </div>
+        <div class="field"><label>決裁欄</label>
+          <div class="kessai-ran" data-kessai-dynamic>
+            <div class="kessai-cell stamped" data-decision-role="draft">
+              <span class="kessai-role-label">起案（申請者）</span>
+              <div class="seal"><span class="seal-role">起案</span><span class="seal-word">承認</span><span class="seal-date">07/01</span></div>
+            </div>
+            <div class="kessai-cell" data-decision-role="chief">
+              <span class="kessai-role-label">室長</span>
+            </div>
+            <div class="kessai-cell" data-decision-role="head">
+              <span class="kessai-role-label">部長</span>
+            </div>
+          </div>
+        </div>
         <div class="field"><label>申請ID</label><div class="value">2026-0001</div></div>
-        <div class="field"><label>差戻しコメント例</label><div class="value">宿泊費の領収書URLを追加のうえ、再申請してください。</div></div>
-        <div class="field"><label>却下コメント例</label><div class="value">今回の申請内容は予算計画対象外のため、却下とします。</div></div>
+        <div class="field"><label>差戻しコメント例</label><div class="value">出張先の詳細行程を追記のうえ、再申請してください。</div></div>
+        <div class="field"><label>却下コメント例</label><div class="value">今回の出張は予算計画対象外のため、却下とします。</div></div>
         <div class="card subtext">差戻しの場合は、申請者が修正後に再申請できるイメージを明示しています。</div>
         <div class="btn-row two-btns">
           <button class="btn ghost" type="button" data-next="list">申請一覧へ</button>
@@ -187,23 +332,23 @@
 
     <div class="screen" data-screen="list">
       <div class="screen-head">
-        <small>事務局管理</small>
+        <small>事務室管理</small>
         <h3>申請一覧・管理</h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">事務局</span>行をタップすると詳細画面に進みます</div>
-        <div class="field"><label>検索・絞り込み</label><div class="value">申請者名 / ステータス / 申請種別 / 期間指定</div></div>
+        <div class="flow-guide"><span class="role-badge">事務室</span>行をタップすると詳細画面に進みます</div>
+        <div class="field"><label>検索・絞り込み</label><div class="value">申請者名 / ステータス / 書類種別 / 期間指定</div></div>
         <div class="list-card" data-next="detail">
-          <div class="list-top"><div><strong>2026-0001 理事会出張費申請</strong><div class="meta">山田 太郎 / 出張申請 / 現在の承認者：顧問</div></div><span class="status wait">承認待ち</span></div>
+          <div class="list-top"><div><strong>2026-0001 出張申請書</strong><div class="meta">田中 一郎 / 出張・旅費 / 現在の決裁者：室長</div></div><span class="status wait">決裁待ち</span></div>
         </div>
         <div class="list-card" data-next="detail">
-          <div class="list-top"><div><strong>2026-0002 試合球購入申請</strong><div class="meta">鈴木 花子 / 備品購入 / 最終承認済み</div></div><span class="status done">承認完了</span></div>
+          <div class="list-top"><div><strong>2026-0002 課外活動・行事開催申請書</strong><div class="meta">佐藤 花子 / 学生関係 / 決裁完了</div></div><span class="status done">決裁完了</span></div>
         </div>
         <div class="list-card" data-next="detail">
-          <div class="list-top"><div><strong>2026-0003 会場使用料精算</strong><div class="meta">佐々木 健 / 経費申請 / 修正待ち</div></div><span class="status back">差戻し</span></div>
+          <div class="list-top"><div><strong>2026-0003 諸経費精算書</strong><div class="meta">中村 誠 / 経理・庶務 / 修正待ち</div></div><span class="status back">差戻し</span></div>
         </div>
         <div class="list-card" data-next="detail">
-          <div class="list-top"><div><strong>2026-0004 備品補充申請</strong><div class="meta">高橋 守 / 備品購入 / URL有効期限切れ</div></div><span class="status expired">期限切れ</span></div>
+          <div class="list-top"><div><strong>2026-0004 備品修繕依頼書</strong><div class="meta">小林 学 / 経理・庶務 / URL有効期限切れ</div></div><span class="status expired">期限切れ</span></div>
         </div>
       </div>
     </div>
@@ -211,11 +356,11 @@
     <div class="screen" data-screen="detail">
       <div class="screen-head">
         <small>申請詳細</small>
-        <h3>詳細・承認履歴</h3>
+        <h3>詳細・決裁履歴</h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">事務局</span>再通知ボタンでメール画面に進めます</div>
-        <div class="field"><label>申請内容</label><div class="value">理事会出席および関係者打合せに伴う出張費申請。会議資料確認済み。</div></div>
+        <div class="flow-guide"><span class="role-badge">事務室</span>再通知ボタンでメール画面に進めます</div>
+        <div class="field"><label>申請内容</label><div class="value">私立大学事務研修会への出席のための出張。研修資料確認済み。</div></div>
         <div class="summary-box">
           <div class="card-title">金額内訳</div>
           <div class="sum-row"><span>交通費</span><strong>8,500円</strong></div>
@@ -225,11 +370,10 @@
         </div>
         <div class="field"><label>添付資料</label><div class="value">https://example.jp/expense/2026-0001</div></div>
         <div class="timeline">
-          <div class="timeline-item"><strong>2026/07/01 10:00</strong><span>申請作成</span></div>
-          <div class="timeline-item"><strong>2026/07/01 13:15</strong><span>担当理事 承認</span></div>
-          <div class="timeline-item"><strong>2026/07/02 09:30</strong><span>顧問 承認</span></div>
-          <div class="timeline-item"><strong>2026/07/02 11:00</strong><span>会長 承認</span></div>
-          <div class="timeline-item"><strong>2026/07/02 11:05</strong><span>最終承認完了</span></div>
+          <div class="timeline-item"><strong>2026/07/01 10:00</strong><span>申請作成・提出（起案）</span></div>
+          <div class="timeline-item"><strong>2026/07/01 13:15</strong><span>室長 決裁</span></div>
+          <div class="timeline-item"><strong>2026/07/02 09:30</strong><span>部長 決裁</span></div>
+          <div class="timeline-item"><strong>2026/07/02 09:35</strong><span>決裁完了</span></div>
         </div>
         <div class="btn-row two-btns">
           <button class="btn ghost" type="button">PDF出力</button>
@@ -247,11 +391,11 @@
       <div class="screen-body">
         <div class="flow-guide"><span class="role-badge">エラー時</span>右上の「最初からやり直す」でトップに戻れます</div>
         <div class="error-card"><strong>URLが無効です</strong><span>送付されたURLをご確認ください。</span></div>
-        <div class="error-card"><strong>有効期限が切れています</strong><span>事務局へ再通知をご依頼ください。</span></div>
-        <div class="error-card"><strong>すでに承認済みです</strong><span>このURLは再利用できません。</span></div>
+        <div class="error-card"><strong>有効期限が切れています</strong><span>事務室へ再通知をご依頼ください。</span></div>
+        <div class="error-card"><strong>すでに決裁済みです</strong><span>このURLは再利用できません。</span></div>
         <div class="error-card"><strong>認証コードが違います</strong><span>6桁コードを再度ご確認ください。</span></div>
-        <div class="error-card"><strong>この申請はすでに終了しています</strong><span>詳細は事務局へお問い合わせください。</span></div>
-        <div class="card subtext">怖さを抑えた丁寧な文言で、事務局への問い合わせ導線を自然に表示しています。</div>
+        <div class="error-card"><strong>この申請はすでに終了しています</strong><span>詳細は事務室へお問い合わせください。</span></div>
+        <div class="card subtext">怖さを抑えた丁寧な文言で、事務室への問い合わせ導線を自然に表示しています。</div>
         <div class="btn-single"><button class="btn navy" type="button" data-next="top">トップに戻る</button></div>
       </div>
     </div>
@@ -259,17 +403,17 @@
     <div class="screen" data-screen="mail">
       <div class="screen-head">
         <small>メール通知</small>
-        <h3>承認依頼メール</h3>
+        <h3>決裁依頼メール</h3>
       </div>
       <div class="screen-body">
-        <div class="flow-guide"><span class="role-badge">承認者へのメール</span>本文中のリンクをタップすると承認画面が開きます</div>
+        <div class="flow-guide"><span class="role-badge">室長へのメール</span>本文中のリンクをタップすると決裁画面が開きます</div>
         <div class="mail-card">
-          <div class="mail-subject">件名： 【承認依頼】出張費申請 2026-0001</div>
+          <div class="mail-subject">件名： 【決裁依頼】出張申請書 2026-0001</div>
           <div class="mail-body">
-            <p>佐藤 一郎 様</p>
-            <p>以下の申請について、承認確認をお願いいたします。</p>
-            <p>申請ID：2026-0001<br>件名：理事会出席に伴う出張費申請<br>申請者：山田 太郎<br>金額：28,300円</p>
-            <p class="mail-link" data-next="approval">承認画面を開く</p>
+            <p>佐藤 室長 様</p>
+            <p>以下の書類について、決裁確認をお願いいたします。</p>
+            <p>申請ID：2026-0001<br>件名：私立大学事務研修会 出席のための出張<br>申請者：田中 一郎<br>金額：28,300円</p>
+            <p class="mail-link" data-next="approval">決裁画面を開く</p>
             <p>認証コード：482913<br>有効期限：2026年7月8日 23:59</p>
             <p class="mail-note">※このURLと認証コードはご本人専用です。<br>※第三者への転送はお控えください。</p>
           </div>
@@ -284,6 +428,8 @@
     if (appResetBtn) {
       appResetBtn.addEventListener('click', function () {
         delete document.body.dataset.flowResult;
+        delete document.body.dataset.flowStage;
+        applyDocSelection('travel', '出張申請書');
         switchScreen('top');
       });
     }
